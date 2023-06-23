@@ -1,0 +1,90 @@
+{% extends 'hospital/homebase.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+      body{
+       background-image:url('{% static "images/patback2.jpg" %}') ;
+       background-size: cover;
+       background-repeat: no-repeat; 
+     }
+    </style>
+
+</head>
+<body>
+    <section class="vh-100 bg-image">
+  
+  <div class="mask d-flex align-items-center h-100 ">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card  bg-primary">
+            <div class="card-body p-4">
+              <h2 class="text-uppercase text-center mt-4 fw-bold text-dark">ADMIN</h2>
+              <h3 class="text-uppercase text-center mb-2  text-white">SIGN UP</h3>
+              
+
+              <form method="post">
+                {% csrf_token %}
+                <div class="container register-form">
+                  <div class="form">
+                    <div class="note text-center mb-4 mt-2">
+                      <p>Add New Admin To Hospital</p>
+                    </div>
+            
+                    <div class="form-content">
+                      <div class="row">
+
+                        <div class="col-md-6 mb-4">
+                          <div class="form-group mb-4 fw-bold">First Name:
+                            {% render_field form.first_name class="form-control" %}
+                          </div>
+                          <div class="form-group mb-4 fw-bold">Username:
+                            {% render_field form.username class="form-control" %}
+                          </div>            
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                          <div class="form-group mb-4 fw-bold">Lastname:
+                            {% render_field form.last_name class="form-control"  %}
+                          </div>
+                          <div class="form-group mb-4 fw-bold">Password:
+                            {% render_field form.password class="form-control"  %}
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="d-flex justify-content-center mb-4">
+                        <button type="submit"
+                          class="btn btn-success btn-lg text-white">Register</button>
+                      </div>
+
+                      <div class="text-center text-white">Already have an account? <a href="/adminlogin" 
+                        class="fw-bold text-decoration-underline text-dark">Login here</a></div>
+                    </div>
+                  </div>
+                </div>
+            
+              </form>
+
+              
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
+{% endblock content %}
