@@ -1,0 +1,86 @@
+{% extends 'hospital/homebase.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+<head>
+  <style media="screen">
+    body{
+      background-color: #c6deff;
+      /* background-image: url('{% static "images/docback4.jpg" %}');
+      background-size: cover; */
+
+    }
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      background-image: url('{% static "images/back5.png" %}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      
+    }
+
+    .jumbotron h5,
+    h3 {
+      text-align: center;
+      margin-top: 10px;
+    }
+    h3 {
+      color: #da0000;
+      font-weight:900;
+      
+    }
+
+
+    /* .alert {
+      margin: 0px;
+    } */
+   
+
+
+
+    .glow {
+      font-size: 50px;
+      font-weight: 900;
+      color: rgb(61, 1, 212);
+      text-align: center;
+      -webkit-animation: glow 1s ease-in-out infinite alternate;
+      -moz-animation: glow 1s ease-in-out infinite alternate;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #eeeeee, 0 0 20px #ffffff, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #000000, 0 0 60px #9554b3, 0 0 70px #9554b3;
+      }
+
+      to {
+        text-shadow: 0 0 20px #eeeeee, 0 0 30px #ffffff, 0 0 40px #1900ff, 0 0 50px #1100ff, 0 0 60px #0008ff, 0 0 70px #2200ff, 0 0 80px #1100ff;
+      }
+    }
+  </style>
+</head>
+<br>
+<br>
+
+<div class="jumbotron" >
+  <br>
+  <h5 class="display-3 glow">Hospital Management System</h5>
+  <br><br><br><br><br>
+  <p>
+  <h3 class="mt-5">Emergency <i class="fa-solid fa-truck-medical"></i></h3>
+ 
+</div>
+<p class="lead" style="margin-top: 40px;text-align: center;">
+  <a class="btn btn-danger btn-lg fw-bold" href="/patientclick" role="button">Take Appointment Now!</a>
+</p>
+<br><br>
+
+{% include "hospital/admin_doctor_patient_card.html" %}
+<br><br>
+
+
+{% endblock content %}
